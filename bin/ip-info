@@ -7,9 +7,28 @@ const
     arg = process.argv.slice(2),
     config = {};
 
-const getConfigName = str => {
+if (!arg.length) {
+    log(`
+Usage
+    $ ip-info [<args>]
 
-};
+Options
+    --ipReg     The ip check RegExp
+    --ip        Target ip or ip list
+    --input     Input file path
+    --output    Output file path
+    --cwd       This path will be used to join with input and output path
+    --format    The format for input and output file. Only support 'json' and 'yaml' now
+    --encoding  The encoding for input and output file
+    --service   The ip search service. Only support 'ipip.net' now
+    --interval  The time interval between each request to prevent ban.
+
+Samples
+    $ ip-info --ip xxx.xxx.xxx.xxx
+    $ ip-info --input /path/to/input.yml --output /path/to/output.yml --format yml --inverval 500
+    `)
+    return;
+}
 
 if (arg.length % 2 !== 0) {
     log(chalk.red('Please input params in pair!'));
@@ -26,7 +45,7 @@ for (let i = 0; i < arg.length; i++) {
 }
 
 ip(config).then(res => {
-    if (config.output) {
+    if (!config.output) {
         log(res);
     } else {
         log(chalk.green('Make output file success!'))

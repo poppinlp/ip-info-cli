@@ -26,12 +26,12 @@ This package is a CLI for [ip-info](https://github.com/poppinlp/ip-info).
 
 So you could use all [config](https://github.com/poppinlp/ip-info#config) in that package and have fun!
 
-## Sample
+## Samples
 
 ### Basic
 
 ```shell
-ip-info --ip 183.240.202.142
+ip-info --ip xxx.xxx.xxx.xxx
 ```
 
 ### More config
