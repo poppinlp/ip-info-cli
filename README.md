@@ -11,13 +11,13 @@ Get IP information include country, province, city and operator.
 Install with this command:
 
 ```shell
-npm i ip-info -g
+npm i ip-info-cli -g
 ```
 
 Or maybe you like yarn:
 
 ```shell
-yarn global add ip-info
+yarn global add ip-info-cli
 ```
 
 ## How to use
